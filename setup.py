@@ -4,8 +4,8 @@ except ImportError:
     from distutils.core import setup
 
 config = {
-    'description': 'a rocks-paper-scissors game',
-    'author': 'Hubert',
+    'description': 'A rocks-paper-scissors game',
+    'author': 'Hubert Kwiatkowski',
     'url': 'URL to get it at.',
     'download_url': 'Where to download it.',
     'aothor_email': 'My email.',
