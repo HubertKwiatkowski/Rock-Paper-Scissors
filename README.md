@@ -1,1 +1,3 @@
-#A Rock-Paper-Scissors game
+# A Rock-Paper-Scissors game
+
+Simple graphic, just to see how it should work.
