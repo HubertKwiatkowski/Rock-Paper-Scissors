@@ -10,7 +10,7 @@ setup(
     install_requires=requirements,
     entry_points={
         'console_scripts': [
-            'rock-paper-scisorrs=rps.__main__:run'
+            'rock-paper-scissors=rps.__main__:run'
         ]
     }
 )
