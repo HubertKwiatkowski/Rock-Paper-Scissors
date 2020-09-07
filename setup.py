@@ -1,19 +1,16 @@
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+#!/usr/bin/env python3
 
-config = {
-    'description': 'A rocks-paper-scissors game',
-    'author': 'Hubert Kwiatkowski',
-    'url': 'URL to get it at.',
-    'download_url': 'Where to download it.',
-    'aothor_email': 'My email.',
-    'version': '0.1',
-    'install_requires': ['nose'],
-    'packages': ['NAME'],
-    'scripts:' [],
-    'name': 'Rock-Paper-Scissors'
-}
+from os.path import join, dirname
+from setuptools import setup
 
-setup(**config)
+requirements = open(join(dirname(__file__), 'requirements.txt')).readlines()
+
+setup(
+    name='rps',
+    install_requires=requirements,
+    entry_points={
+        'console_scripts': [
+            'rock-paper-scisorrs=rps.__main__:run'
+        ]
+    }
+)
