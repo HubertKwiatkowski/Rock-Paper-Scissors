@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from buttons import Button, AIButton
+from buttons import Button, PButtons, AIButton
 
 class RockPaperScissors:
     """A class to manage the game."""
@@ -35,23 +35,28 @@ class RockPaperScissors:
 
     def _make_buttons(self):
         """Make buttons for player and AI."""
-        self.r_button.x = 50
+        x = 50
         y = 250
-        self.r_button = Button(self, "R")
-        # self.r_button.rect.x = x
-        # self.r_button.rect.y = y
-        self.p_button = Button(self, "P")
+        self.r_button = PButtons(self)
+        self.r_button.rect.x = x
+        self.r_button.rect.y = y
+        self.r_button.prep_msg("R")
+        self.p_button = PButtons(self)
         self.p_button.rect.x = x + 150
         self.p_button.rect.y = y
-        self.s_button = Button(self, "S")
+        self.p_button.prep_msg("P")
+        self.s_button = PButtons(self)
         self.s_button.rect.x = x + 300
         self.s_button.rect.y = y
-        self.q_button = Button(self, "Q")
+        self.s_button.prep_msg("S")
+        self.q_button = PButtons(self)
         self.q_button.rect.x = x + 450
         self.q_button.rect.y = y
-        self.ai_button = AIButton(self, ":)")
+        self.q_button.prep_msg("Q")
+        self.ai_button = AIButton(self)
         self.ai_button.rect.x = 450
         self.ai_button.rect.y = 50
+        self.ai_button.prep_msg(":)")
 
     def _draw_buttons(self):
         """Draw buttons."""
