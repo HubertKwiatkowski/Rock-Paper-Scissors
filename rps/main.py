@@ -35,11 +35,11 @@ class RockPaperScissors:
 
     def _make_buttons(self):
         """Make buttons for player and AI."""
-        x = 50
+        self.r_button.x = 50
         y = 250
         self.r_button = Button(self, "R")
-        self.r_button.rect.x = x
-        self.r_button.rect.y = y
+        # self.r_button.rect.x = x
+        # self.r_button.rect.y = y
         self.p_button = Button(self, "P")
         self.p_button.rect.x = x + 150
         self.p_button.rect.y = y

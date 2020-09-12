@@ -1,5 +1,8 @@
 import pygame.font
 
+x = 0
+y = 0
+
 class Button():
     """A class to generate R-P-S buttons."""
 
@@ -12,12 +15,12 @@ class Button():
         self.width, self.height = 100, 100
         self.button_color = (255, 0, 0)
         self.text_color = (255, 255, 255)
-        self.font = pygame.font.SysFont(None, 40)
+        self.font = pygame.font.SysFont(None, 80)
 
         # Build the buttons rect object and put it in right top corner.
         self.rect = pygame.Rect(0, 0, self.width, self.height)
-        self.rect.x = 0
-        self.rect.y = 0
+        self.rect.x = x
+        self.rect.y = y
 
         # Store fields exact position.
         self.x = float(self.rect.x)
