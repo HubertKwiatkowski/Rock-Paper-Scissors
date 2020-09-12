@@ -17,7 +17,7 @@ class Button():
         self.rect.x = 0
         self.rect.y = 0
 
-        # Store fields exact position.
+        # Store buttons exact position.
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
 
@@ -25,12 +25,12 @@ class Button():
         """Turn msg into a rendered image and center text on button."""
         self.msg_image = self.font.render(
             msg, True, self.text_color, self.button_color
-            )
+        )
         self.msg_image_rect = self.msg_image.get_rect()
         self.msg_image_rect.center = self.rect.center
 
     def draw_button(self):
-        # Draw blank button and then draw message.
+        """Draw blank button and then draw message."""
         self.screen.fill(self.button_color, self.rect)
         self.screen.blit(self.msg_image, self.msg_image_rect)
 
