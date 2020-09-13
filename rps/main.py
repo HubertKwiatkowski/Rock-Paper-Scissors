@@ -19,20 +19,10 @@ class RockPaperScissors:
         self._make_score()
 
     def run_game(self):
-        """Start the main loop for the game"""
-
+        """Start the main loop for the game."""
         while True:
             self._check_events()
             self._update_screen()
-
-    def timer(self):
-        """Game timer"""
-        for remaining in range(10, 0, -1):
-            sys.stdout.write("\r")
-            sys.stdout.write("{:2s} seconds remaining.".format(remaining))
-            sys.stdout.flush()
-            time.sleep(1)
-        sys.stdout.write("\rU lost")
 
     def _check_events(self):
         for event in pygame.event.get():

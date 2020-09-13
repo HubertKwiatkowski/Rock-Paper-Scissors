@@ -14,7 +14,7 @@ class Score():
         self.text_color = (0, 0, 0)
         self.font = pygame.font.SysFont(None, 100)
 
-        # Build the buttons rect object and center it.
+        # Build the buttons rect object and place it.
         self.rect = pygame.Rect(0, 0, self.width, self.height)
         self.rect.x = 250
         self.rect.y = 50
