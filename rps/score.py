@@ -1,4 +1,4 @@
-import pygame.font
+import pygame
 
 class Score():
     """A class to display score."""
@@ -27,6 +27,7 @@ class Score():
 
     def _prep_msg(self, msg):
         """Turn msg into a rendered image and center text on score field."""
+        # msg =
         self.msg_image = self.font.render(
             msg, True, self.text_color, self.score_color
         )
@@ -37,3 +38,7 @@ class Score():
         """Draw blank score field and then draw score."""
         self.screen.fill(self.score_color, self.rect)
         self.screen.blit(self.msg_image, self.msg_image_rect)
+
+    def get_tick(self):
+        start_time = pygame.time.get_ticks()
+        return start_time

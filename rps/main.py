@@ -5,6 +5,9 @@ import time
 from buttons import Button, PButtons, AIButton
 from score import Score
 
+
+start_ticks = None
+
 class RockPaperScissors:
     """A class to manage the game."""
 
@@ -28,6 +31,7 @@ class RockPaperScissors:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+
 
     def _update_screen(self):
         self._draw_fields()
@@ -59,6 +63,7 @@ class RockPaperScissors:
         self.ai_button.prep_msg(":)")
 
     def _make_score(self):
+        time = int(self.get_tick() / 1000)
         self.score = Score(self, "10")
 
     def _draw_fields(self):
@@ -69,3 +74,7 @@ class RockPaperScissors:
         self.q_button.draw_button()
         self.ai_button.draw_button()
         self.score.draw_score()
+
+    def get_tick(self):
+        start_time = pygame.time.get_ticks()
+        return start_time

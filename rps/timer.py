@@ -16,6 +16,12 @@ class Timer():
         self.text_color = (0, 0, 0)
         self.font = pygame.font.SysFont(None, 70)
 
+        # Build the timer object and place it.
+        self.rect = pygame.Rect(0, 0, self.width, self.height)
+        self.rect.x = 50
+        self.rect.y = 50
+
+
 
     def timer(self):
         """Game timer."""
