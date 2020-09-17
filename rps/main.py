@@ -6,6 +6,8 @@ from buttons import Button, PButtons, AIButton
 from score import Score
 from timer import Timer
 
+current_time = 0
+
 class RockPaperScissors:
     """A class to manage the game."""
 
@@ -17,8 +19,6 @@ class RockPaperScissors:
 
         # Make all fields.
         self._make_fields()
-
-
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -73,7 +73,9 @@ class RockPaperScissors:
         self._draw_time()
 
     def _draw_time(self):
+        global current_time
         start_time = pygame.time.get_ticks()
-        time = str(int(start_time / 1000))
-        self.timer.show_time(time)
+        time = int((start_time - current_time) / 1000)
+        if time > 10: current_time = pygame.time.get_ticks()
+        self.timer.show_time(str(time))
         self.timer.draw_timer()
