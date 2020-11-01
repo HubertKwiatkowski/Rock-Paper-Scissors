@@ -38,7 +38,3 @@ class Score():
         """Draw blank score field and then draw score."""
         self.screen.fill(self.score_color, self.rect)
         self.screen.blit(self.msg_image, self.msg_image_rect)
-
-    def get_tick(self):
-        start_time = pygame.time.get_ticks()
-        return start_time

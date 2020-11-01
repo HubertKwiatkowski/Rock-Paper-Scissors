@@ -33,12 +33,3 @@ class Timer():
         """Draw blank field and then draw time."""
         self.screen.fill(self.timer_color, self.rect)
         self.screen.blit(self.timer_image, self.timer_image_rect)
-
-    def timer(self):
-        """Game timer."""
-        for remaining in range(10, 0, -1):
-            sys.stdout.write("\r")
-            sys.stdout.write("{:10}".format(remaining))
-            sys.stdout.flush()
-            time.sleep(1)
-        sys.stdout.write("\rU lost")
