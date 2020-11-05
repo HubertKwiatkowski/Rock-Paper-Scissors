@@ -1,5 +1,4 @@
-from main import RockPaperScissors # .main does not work...
-                                   # need to look into it later
+from main import RockPaperScissors 
 
 def run():
     rps = RockPaperScissors()
